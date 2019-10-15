@@ -5,6 +5,7 @@ const gencode = require("./utils/gencode");
 const forcast = require("./utils/forecast");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 const pathroutetopublic = path.join(__dirname, "../public");
 
@@ -76,6 +77,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("port 3000 start server");
+app.listen(port, () => {
+  console.log("start server at port " + port);
 });
